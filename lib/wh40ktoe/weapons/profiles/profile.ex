@@ -2,6 +2,8 @@ defmodule Wh40ktoe.Weapons.Profiles.Profile do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Wh40ktoe.Weapons.Weapon
+
   schema "weapon_profiles" do
     field :ap, :integer
     field :damage, :integer
@@ -10,6 +12,8 @@ defmodule Wh40ktoe.Weapons.Profiles.Profile do
     field :range, :string
     field :strength, :integer
     field :type, :string
+
+    belongs_to(:weapon, Weapon)
 
     timestamps()
   end

@@ -8,7 +8,15 @@ defmodule Wh40ktoe.Weapons.ProfilesTest do
 
     import Wh40ktoe.Weapons.ProfilesFixtures
 
-    @invalid_attrs %{ap: nil, damage: nil, name: nil, notes: nil, range: nil, strength: nil, type: nil}
+    @invalid_attrs %{
+      ap: nil,
+      damage: nil,
+      name: nil,
+      notes: nil,
+      range: nil,
+      strength: nil,
+      type: nil
+    }
 
     test "list_weapon_profiles/0 returns all weapon_profiles" do
       profile = profile_fixture()
@@ -21,7 +29,15 @@ defmodule Wh40ktoe.Weapons.ProfilesTest do
     end
 
     test "create_profile/1 with valid data creates a profile" do
-      valid_attrs = %{ap: 42, damage: 42, name: "some name", notes: "some notes", range: "some range", strength: 42, type: "some type"}
+      valid_attrs = %{
+        ap: 42,
+        damage: 42,
+        name: "some name",
+        notes: "some notes",
+        range: "some range",
+        strength: 42,
+        type: "some type"
+      }
 
       assert {:ok, %Profile{} = profile} = Profiles.create_profile(valid_attrs)
       assert profile.ap == 42
@@ -39,7 +55,16 @@ defmodule Wh40ktoe.Weapons.ProfilesTest do
 
     test "update_profile/2 with valid data updates the profile" do
       profile = profile_fixture()
-      update_attrs = %{ap: 43, damage: 43, name: "some updated name", notes: "some updated notes", range: "some updated range", strength: 43, type: "some updated type"}
+
+      update_attrs = %{
+        ap: 43,
+        damage: 43,
+        name: "some updated name",
+        notes: "some updated notes",
+        range: "some updated range",
+        strength: 43,
+        type: "some updated type"
+      }
 
       assert {:ok, %Profile{} = profile} = Profiles.update_profile(profile, update_attrs)
       assert profile.ap == 43
